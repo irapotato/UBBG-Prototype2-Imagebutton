@@ -1,0 +1,32 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 48, in script call
+    call begin_at_bat
+  File "game/outcomes.rpy", line 33, in script
+    if strike_count 0 or 1:
+SyntaxError: invalid syntax (game/outcomes.rpy, line 33)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 48, in script call
+    call begin_at_bat
+  File "game/outcomes.rpy", line 33, in script
+    if strike_count 0 or 1:
+  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/outcomes.rpy, line 33)
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.4.24120703
+UBBG Prototype 2 Multifile Implimentation 1.0
+Sat Aug  9 21:37:18 2025

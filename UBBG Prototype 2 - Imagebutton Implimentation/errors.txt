@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 186: Line is indented, but the preceding hide statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    return
+    ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Sun Aug 10 13:28:12 2025
