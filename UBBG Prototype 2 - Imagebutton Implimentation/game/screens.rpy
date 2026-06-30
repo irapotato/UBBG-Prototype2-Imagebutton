@@ -95,6 +95,10 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+screen roll_for_eye:
+    modal True
+    imagebutton auto "dice_%s.png" xalign 0.5 yalign 0.5 action [Function(eye_roll), Return("Rolled")]
+
 screen scoreboard:
     frame:
         xpadding 40

@@ -5,18 +5,23 @@ label at_bat:
     "Zuniga winds up..."
 
     $ pitcher_location = renpy.random.randint(1,6)
-    $ batter_eye = renpy.random.randint(1,12)
+    
+    # attempting to replace the batter rolls with imagebutton screens for input.
+    # $ batter_eye = renpy.random.randint(1,12)
 
     show screen location_roll
+
     "He rolls for Location (1d6)... [pitcher_location]."
     
-    
-    
     if pitcher_location == 1 or pitcher_location == 6:
-        "The pitch is outside! You try to take the pitch..."
+
+        #modal imagebutton to have player roll for eye.
+
+        show screen roll_for_eye
+        "The pitch is outside! Roll to try and take the pitch..."
 
         $ needed_roll_ball = int((stat_pitcher_location * 0.5) + 5)
-        $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
+        # $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
 
         show screen batter_needs_ball
 

@@ -1,4 +1,23 @@
-﻿define j = Character("Justin Davis")
+﻿init python:
+    
+    stat_pitcher_location = 2
+    stat_pitcher_velo = 5
+    stat_pitcher_accuracy = 3
+
+    stat_batter_eye = 2
+    stat_batter_contact = 3
+    stat_batter_power = 5
+    
+    import random
+    def eye_roll():
+        global eye_roll_total
+        eye_roll_total = random.randint(1,12) + (stat_batter_eye * 0.5)
+
+    def contact
+
+
+
+define j = Character("Justin Davis")
 define w = Character("Wilmary Zuniga")
 define jm = Character("Jack (Dev)")
 define aa = Character("Alonso Aguilar")
@@ -13,28 +32,27 @@ label start:
     "This is a test of Renpy where we will be running batting practice using multiple .rpy files to allow implimentation and make it easier to develop the game in steps."
 
     python:
-        stat_pitcher_location = 2
-        stat_pitcher_velo = 5
-        stat_pitcher_accuracy = 3
-
-        stat_batter_eye = 2
-        stat_batter_contact = 3
-        stat_batter_power = 5
+        
 
         pitcher_location = renpy.random.randint(1,6)
-        batter_eye = renpy.random.randint(1,12)
 
-        contact_one = renpy.random.randint(1,6)
-        contact_two = renpy.random.randint(1,6)
-        powerd20 = renpy.random.randint(1,20)
-        contact_roll = 0
+        #replacing the commented python code with imagebutton commands and python functions above
+        # batter_eye = renpy.random.randint(1,12)
+
+        #contact_one = renpy.random.randint(1,6)
+        #contact_two = renpy.random.randint(1,6)
+        #powerd20 = renpy.random.randint(1,20)
+        #contact_roll = 0
         pitcher_velocity = renpy.random.randint(1,6)
         pitcher_accuracy = renpy.random.randint(1,20)
         strike_count = 0
         ball_count = 0
 
+        #outcome text for outs
         r_outfielder_positions = renpy.random.choice(["Left Fielder", "Right Fielder", "Center Fielder"])
         r_ground_out_positions = renpy.random.choice(["Second Baseman", "Shortstop", "Third Baseman"])
+
+        
 
     show screen player_stats
 
@@ -81,35 +99,6 @@ label start:
 
 
     return
-            #"Tell me a joke?":
-#                "...why would you click that option..."
-#                "..."
-#                "...\n....."
-#                "...\n.....\n......."
-#                " "
-#                " "
-#                jm "Fine."
-#                jm "What do you call a two legged horse?"
-
-#                menu:
-#                    "I dont know":
-#                        "Less balanced."
-#                        menu:
-#                            "Hahahahaha":
-#                                jm "See, I made you laugh there. Literally. You have no authority to not laugh at my joke."
-#                                menu:
-#                                    "Sounds good."
-
-
-                                #return
-
-
-            #    jm "There once was a man from Nantucket"
-            #    jm "Whose wife went and kicked the bucket"
-            #    jm "And woe, it was he, he once said to me"
-            #    jm "I just miss how my darling would suck it."
-            #    jm "Anything else?"
-
 
     label good_end:
     
