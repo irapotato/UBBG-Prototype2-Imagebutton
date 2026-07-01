@@ -2,16 +2,38 @@
     
     import random
 
-
     # stat values for pitcher and batter
+    
+    class batter:
+        def __init__(self, name, first_name, last_name, stat_eye, stat_con, stat_pow, stat_abl):
+            self.name = name
+            self.first_name = first_name
+            self.last_name = last_name
+            self.stat_eye = stat_eye
+            self.stat_con = stat_con
+            self.stat_pow = stat_pow
+            self.stat_abl = stat_abl
+    
+    jd = batter("Justin Davis", "Justin", "Davis", 2, 2, 2, 1)
 
-    stat_pitcher_location = 3
-    stat_pitcher_velo = 5
-    stat_pitcher_accuracy = 3
+    class pitcher:
+        def __init__(self, name, first_name, last_name, stat_loc, stat_velo, stat_acc, stat_abl):
+            self.name = name
+            self.first_name = first_name
+            self.last_name = last_name
+            self.stat_loc = stat_loc
+            self.stat_velo = stat_velo
+            self.stat_acc = stat_acc
+            self.stat_abl = stat_abl
+    wz = pitcher("Wilmary Zuniga", "Wilmary", "Zuniga", 3, 5, 3, 2)
 
-    stat_batter_eye = 2
-    stat_batter_contact = 2
-    stat_batter_power = 2
+    #stat_pitcher_location = 3
+    #stat_pitcher_velo = 5
+    #stat_pitcher_accuracy = 3
+
+    #stat_batter_eye = 2
+    #stat_batter_contact = 2
+    #stat_batter_power = 2
     
     # function called by eye roll imagebutton screen. Only generates the random number, calculations are done locally.
     def eye_roll_function():
@@ -56,11 +78,11 @@ label start:
 
     show screen player_stats
 
-    "Today, you will be playing as Justin Davis ([stat_batter_eye] EYE, [stat_batter_contact] CON, [stat_batter_power] POW), Rookie (DH) for the Boston Beans."
+    "Today, you will be playing as Justin Davis ([jd.stat_eye] EYE, [jd.stat_con] CON, [jd.stat_pow] POW), Rookie (DH) for the Boston Beans."
 
     show screen pitcher_stats
 
-    "You are practicing against Wilmary Zuniga ([stat_pitcher_location] LOC, [stat_pitcher_accuracy] ACC, [stat_pitcher_velo] VELO), the veteran pitcher (CP) for Boston. His blistering fastball and tight mechanics have helped him lock up the closer spot for Boston for the past few seasons."
+    "You are practicing against Wilmary Zuniga ([wz.stat_loc] LOC, [wz.stat_acc] ACC, [wz.stat_velo] VELO), the veteran pitcher (CP) for Boston. His blistering fastball and tight mechanics have helped him lock up the closer spot for Boston for the past few seasons."
 
     show screen scoreboard
 

@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/batting.rpy", line 20: unterminated string literal
-    "The pitch is outside!" Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_ball].""
+File "game/script.rpy", line 8: expected ':'
+    def __init__(self, name, first_name, last_name, stat_eye, stat_con, stat_pow, stat_abl)
+                                                                                               ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Tue Jun 30 20:08:14 2026
+Wed Jul  1 11:45:19 2026

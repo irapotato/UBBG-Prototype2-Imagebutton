@@ -4,7 +4,7 @@ label begin_at_bat:
 
 label at_bat:
 
-    "Zuniga winds up..."
+    "[wz.name] winds up..."
 
     $ pitcher_location = renpy.random.randint(1,6)
     
@@ -14,15 +14,15 @@ label at_bat:
     
     if pitcher_location == 1 or pitcher_location == 6:
 
-        $ needed_roll_ball = int((stat_pitcher_location * 0.5) + 5)
+        $ needed_roll_ball = int((wz.stat_loc * 0.5) + 5)
         show screen batter_needs_ball
 
-        "The pitch is outside! Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_ball] to check up."
+        "The pitch is outside! Pitcher's Location stat is [wz.stat_loc], hitter needs to roll a [needed_roll_ball] to check up."
         
         show screen button_eye
         "Roll for Eye (1d12)!"
 
-        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        $ eye_roll_total = (jd.stat_eye * 0.5) + eye_roll
 
         hide screen button_eye
 
@@ -52,107 +52,107 @@ label at_bat:
             
     elif pitcher_location == 2:
 
-        $ needed_roll_strike =int(2 * ((0.5 * stat_pitcher_location) + pitcher_location))
+        $ needed_roll_strike =int(2 * ((0.5 * wz.stat_loc) + pitcher_location))
         show screen batter_needs_strike
 
-        "The pitch is high and outside, not too hard to hit. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        "The pitch is high and outside, not too hard to hit. Pitcher's Location stat is [wz.stat_loc], hitter needs to roll a [needed_roll_strike] to make contact."
 
         show screen button_eye
         "Roll for Eye (1d12)!"
 
-        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        $ eye_roll_total = (jd.stat_eye * 0.5) + eye_roll
         
         hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye], totaling [eye_roll_total]. You make contact!"
             $ is_hit = True
         else:
             $ strike_count +=1
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
 
     elif pitcher_location == 3:
         
-        $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
+        $ needed_roll_strike = 2 * ((0.5 * wz.stat_loc) + pitcher_location)
         show screen batter_needs_strike
 
-        "The pitch is low and outside, pulling away from you. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        "The pitch is low and outside, pulling away from you. Pitcher's Location stat is [wz.stat_loc], hitter needs to roll a [needed_roll_strike] to make contact."
         
         show screen button_eye
         "Roll for Eye (1d12)!"
 
-        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        $ eye_roll_total = (jd.stat_eye * 0.5) + eye_roll
 
         hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye], totaling [eye_roll_total]. You make contact!"
             $ is_hit = True
         else:
             show screen eye_roll
 
             $ strike_count +=1
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
     elif pitcher_location == 4:
 
-        $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
+        $ needed_roll_strike = 2 * ((0.5 * wz.stat_loc) + pitcher_location)
         show screen batter_needs_strike
 
-        "The pitch is high and inside, approaching the edge of the zone. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        "The pitch is high and inside, approaching the edge of the zone. Pitcher's Location stat is [wz.stat_loc], hitter needs to roll a [needed_roll_strike] to make contact."
         
         show screen button_eye
         "Roll for Eye (1d12)!"
 
-        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        $ eye_roll_total = (jd.stat_eye * 0.5) + eye_roll
         
         hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye]. You make contact!"
             $ is_hit = True
         else:
             $ strike_count +=1
             show screen eye_roll
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
             
     elif pitcher_location == 5:
 
-        $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
+        $ needed_roll_strike = 2 * ((0.5 * wz.stat_loc) + pitcher_location)
         show screen batter_needs_strike
 
-        "The pitch is low and inside, dotted on the corner of the zone. You'll need a good eye to catch this one. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        "The pitch is low and inside, dotted on the corner of the zone. You'll need a good eye to catch this one. Pitcher's Location stat is [wz.stat_loc], hitter needs to roll a [needed_roll_strike] to make contact."
 
         show screen button_eye
         "Roll for Eye (1d12)!"
 
-        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        $ eye_roll_total = (jd.stat_eye * 0.5) + eye_roll
 
         hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye]. You make contact!"
             $ is_hit = True
         else:
             show screen eye_roll                
             $ strike_count +=1
-            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * jd.stat_eye]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
@@ -169,7 +169,7 @@ label at_bat:
 
 
         show screen button_hit_roll
-        "Roll to get your Contact (>2d6 + [stat_batter_contact]) and Power (1d20 + [stat_batter_power]) totals."     
+        "Roll to get your Contact (>2d6 + [jd.stat_con]) and Power (1d20 + [jd.stat_pow]) totals."     
         hide screen button_hit_roll
         
         hide screen hit_score_screen 
@@ -178,18 +178,18 @@ label at_bat:
         #$ contact_two = renpy.random.randint(1,6)
 
         if contact_one >= contact_two:
-            $ contact_total = stat_batter_contact + contact_one
+            $ contact_total = jd.stat_con + contact_one
         else:
-            $ contact_total = stat_batter_contact + contact_two
+            $ contact_total = jd.stat_con + contact_two
 
         show screen batter_roll_contact
-        "Your Contact rolls (>2d6 + [stat_batter_contact]) were [contact_one] and [contact_two], meaning your Contact total is [contact_total]."
+        "Your Contact rolls (>2d6 + [jd.stat_con]) were [contact_one] and [contact_two], meaning your Contact total is [contact_total]."
 
         #$ powerd20 = renpy.random.randint(1,20)
-        $ power_total = power_roll + stat_batter_power
+        $ power_total = power_roll + jd.stat_pow
 
         show screen batter_roll_power
-        "Your Power roll (1d20 + [stat_batter_power]) was [power_roll], giving you a Power total of [power_total]."
+        "Your Power roll (1d20 + [jd.stat_pow]) was [power_roll], giving you a Power total of [power_total]."
 
         python:
             hit_score = power_total * contact_total
@@ -197,7 +197,7 @@ label at_bat:
             pitcher_velocity = renpy.random.randint(1,6)
             pitcher_accuracy = renpy.random.randint(1,20)
 
-            pitch_score = (stat_pitcher_accuracy + pitcher_accuracy) * (stat_pitcher_velo + pitcher_velocity)
+            pitch_score = (wz.stat_acc + pitcher_accuracy) * (wz.stat_velo + pitcher_velocity)
             outcome_score = hit_score - pitch_score
 
         show screen hit_score_screen
@@ -206,9 +206,9 @@ label at_bat:
         show screen pitcher_roll_accuracy
         show screen pitcher_roll_velocity
 
-        "Zuniga rolls for Velocity (1d6 + [stat_pitcher_velo]) and Accuracy (1d20 + [stat_pitcher_accuracy])."
+        "Zuniga rolls for Velocity (1d6 + [wz.stat_velo]) and Accuracy (1d20 + [wz.stat_acc])."
 
         show screen pitch_score_screen
-        "He rolls [pitcher_velocity] (+[stat_pitcher_velo]) and [pitcher_accuracy] (+[stat_pitcher_accuracy]), giving him a Pitch Effectiveness of [pitch_score]"
+        "He rolls [pitcher_velocity] (+[wz.stat_velo]) and [pitcher_accuracy] (+[wz.stat_acc]), giving him a Pitch Effectiveness of [pitch_score]"
 
         jump outcome_text

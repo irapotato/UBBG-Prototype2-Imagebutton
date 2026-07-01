@@ -111,14 +111,13 @@ screen scoreboard:
         yalign 0.7
         text "Balls: [ball_count]\nStrikes: [strike_count]"
 
-
 screen pitcher_stats:
     frame:
         xpadding 40
         ypadding 20
         xalign 0.0
         yalign 0.1
-        text "Pitching: [w]\nLOC: [stat_pitcher_location]\nACC: [stat_pitcher_accuracy]\nVELO: [stat_pitcher_velo]"
+        text "Pitching: [w]\nLOC: [wz.stat_loc]\nACC: [wz.stat_acc]\nVELO: [wz.stat_velo]"
 
 screen player_stats:
     frame:
@@ -126,7 +125,7 @@ screen player_stats:
         ypadding 20
         xalign 1.0
         yalign 0.1
-        text "Batting: [j]\nEYE: [stat_batter_eye]\nCON: [stat_batter_contact]\nPOW: [stat_batter_power]"
+        text "Batting: [j]\nEYE: [jd.stat_eye]\nCON: [jd.stat_con]\nPOW: [jd.stat_pow]"
 
 screen location_roll:
     frame:
@@ -143,9 +142,6 @@ screen eye_roll:
         xalign .75
         yalign 0.5
         text "Eye Roll: [eye_roll]\nEye Total: [eye_roll_total]"
-
-
-
 
 screen batter_needs_ball:
     frame:
