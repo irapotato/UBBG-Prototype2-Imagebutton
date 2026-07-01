@@ -95,9 +95,13 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen roll_for_eye:
+screen button_eye:
     modal True
-    imagebutton auto "dice_%s.png" xalign 0.5 yalign 0.5 action [Function(eye_roll), Return("Rolled")]
+    imagebutton auto "dice_%s.png" xalign 0.5 yalign 0.35 action [Function(eye_roll_function), Return("Rolled")]
+
+screen button_hit_roll:
+    modal True
+    imagebutton auto "dice_%s.png" xalign 0.5 yalign 0.35 action [Function(hit_roll_function), Return("Rolled")]
 
 screen scoreboard:
     frame:
@@ -138,7 +142,7 @@ screen eye_roll:
         ypadding 20
         xalign .75
         yalign 0.5
-        text "Eye Roll: [batter_eye]\nEye Total: [eye_roll_total]"
+        text "Eye Roll: [eye_roll]\nEye Total: [eye_roll_total]"
 
 
 
@@ -171,7 +175,7 @@ screen batter_roll_power:
         ypadding 20
         xalign 1.0
         yalign 0.5
-        text "Power roll: [powerd20]"
+        text "Power roll: [power_roll]"
 
 screen pitcher_roll_velocity:
     frame:

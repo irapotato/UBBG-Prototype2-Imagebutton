@@ -1,42 +1,42 @@
-2026-06-30 23:06:06 UTC
-Windows-10-10.0.19045-SP0
+2026-07-01 02:44:52 UTC
+macOS-26.3.2-arm64-arm-64bit
 Ren'Py 8.5.3.26051504
 
 Early init took 23 ms
-Loading error handling took 58 ms
-Loading script took 503 ms
-Loading save slot metadata took 84 ms
-Loading persistent took 4 ms
-Running init code took 38 ms
-Loading analysis data took 14 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 78 ms
-Backing up script files to 'C:\\Users\\Jack\\AppData\\Roaming/RenPy/backups\\UBBG Prototype 2 - Imagebutton Implimentation':
-Dump and make backups took 28 ms
+Loading error handling took 13 ms
+Loading script took 63 ms
+Loading save slot metadata took 13 ms
+Loading persistent took 0 ms
+Running init code took 18 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 4 ms
+Backing up script files to '/Users/angeliquemaemurray/Library/RenPy/backups/UBBG Prototype 2 - Imagebutton Implimentation':
+Dump and make backups took 15 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 34 ms
+Making clean stores took 0 ms
+Initial gc took 14 ms
 DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 130 ms
+Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 9 ms
-Analyze screens took 10 ms
-Save screen analysis took 6 ms
-Save pyanalysis took 3 ms
-Save bytecode took 15 ms
-Running _start took 1 ms
-Interface start took 263 ms
+Load screen analysis took 0 ms
+Analyze screens took 3 ms
+Save screen analysis took 5 ms
+Save pyanalysis took 0 ms
+Save bytecode took 12 ms
+Running _start took 0 ms
+Interface start took 550 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
+primary display bounds: (0, 0, 1408, 881)
 swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 4070 Ti SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 610.62'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 2560, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1157, 651) drawable=(1157, 651)
+Fullscreen mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1408, 'current_h': 881, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1408, 881) drawable=(2816, 1762)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1408, 881) drawable=(2816, 1762)
 Maximum texture size: 4096x4096

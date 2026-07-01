@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 186: Line is indented, but the preceding hide statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    return
-    ^
+File "game/batting.rpy", line 20: unterminated string literal
+    "The pitch is outside!" Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_ball].""
 
-Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Aug 10 13:28:12 2025
+Ren'Py Version: Ren'Py 8.5.3.26051504
+Tue Jun 30 20:08:14 2026

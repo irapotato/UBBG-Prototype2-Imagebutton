@@ -64,7 +64,7 @@ label outcome_text:
         
         "You manage to draw a walk. Not much you could do better there, I guess."
 
-        w "Ahh, you got lucky! I'm barely even warmed up. Next time, it's 3 strikes and a K!"
+        w "Ahh, you got lucky! I'm barely even warmed up. Next time, it's 3 pitches and a K!"
 
         j "He couldn't even keep the ball in the zone, and somehow it still feels like he won. Next time, I'm swinging for the fences."
 
@@ -85,7 +85,7 @@ label outcome_text:
 
         "Strikeout! You feel a bit embarassed as you walk back to the dugout for some reason, despite knowing even MVPs strike out sometimes."
 
-        w "That's right, rook! You best know your stuff before you come at a vet again!"
+        w "That's right, rook! You best know your stuff before you walk up to my plate!"
 
         "You strike out to Wilmary. He strikes you as a bit insecure under his brash comments, like someone who knows they've been let off the hook once too many times."
 

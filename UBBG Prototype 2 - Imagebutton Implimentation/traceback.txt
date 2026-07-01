@@ -1,32 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 48, in script call
-    call begin_at_bat
-  File "game/outcomes.rpy", line 33, in script
-    if strike_count 0 or 1:
-SyntaxError: invalid syntax (game/outcomes.rpy, line 33)
+  File "game/batting.rpy", line 187, in script
+    $ power_total = powerd20 + stat_batter_power
+  File "game/batting.rpy", line 187, in <module>
+    $ power_total = powerd20 + stat_batter_power
+                    ^^^^^^^^                    
+NameError: name 'powerd20' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "game/script.rpy", line 48, in script call
-    call begin_at_bat
-  File "game/outcomes.rpy", line 33, in script
-    if strike_count 0 or 1:
-  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\jacksomu\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/outcomes.rpy, line 33)
+Traceback (most recent call last):
+  File "game/batting.rpy", line 187, in script
+    $ power_total = powerd20 + stat_batter_power
+  File "renpy/ast.py", line 1193, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1276, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/batting.rpy", line 187, in <module>
+    $ power_total = powerd20 + stat_batter_power
+                    ^^^^^^^^                    
+NameError: name 'powerd20' is not defined
 
-Windows-10-10.0.22631 AMD64
-Ren'Py 8.3.4.24120703
-UBBG Prototype 2 Multifile Implimentation 1.0
-Sat Aug  9 21:37:18 2025
+macOS-26.3.2-arm64-arm-64bit arm64
+Ren'Py 8.5.3.26051504
+UBBG Prototype 2 - ImageButton Implimentation 1.0
+Tue Jun 30 22:33:28 2026

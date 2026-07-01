@@ -1,38 +1,37 @@
 label begin_at_bat:
+
     "The count is [ball_count] and [strike_count]."
 
 label at_bat:
+
     "Zuniga winds up..."
 
     $ pitcher_location = renpy.random.randint(1,6)
     
-    # attempting to replace the batter rolls with imagebutton screens for input.
-    # $ batter_eye = renpy.random.randint(1,12)
-
     show screen location_roll
 
-    "He rolls for Location (1d6)... [pitcher_location]."
+    "The pitcher rolls for Location (1d6)... [pitcher_location]."
     
     if pitcher_location == 1 or pitcher_location == 6:
 
-        #modal imagebutton to have player roll for eye.
-
-        show screen roll_for_eye
-        "The pitch is outside! Roll to try and take the pitch..."
-
         $ needed_roll_ball = int((stat_pitcher_location * 0.5) + 5)
-        # $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
-
         show screen batter_needs_ball
 
-        "Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_ball]."
+        "The pitch is outside! Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_ball] to check up."
+        
+        show screen button_eye
+        "Roll for Eye (1d12)!"
+
+        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+
+        hide screen button_eye
 
         if eye_roll_total >= needed_roll_ball:
             $ ball_count += 1
 
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye], giving you a [eye_roll_total] Eye total. You manage to not swing, Ball [ball_count]!"
+            "Your Eye roll (1d12) is [eye_roll], giving you a [eye_roll_total] Eye total. You manage to not swing, Ball [ball_count]!"
 
             $ is_hit = False
 
@@ -44,7 +43,7 @@ label at_bat:
 
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye], giving you a [eye_roll_total] Eye total. You awkwardly swing at nothing, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll], giving you a [eye_roll_total] Eye total. You awkwardly swing at nothing, Strike [strike_count]!"
 
             $ is_hit = False
 
@@ -52,86 +51,113 @@ label at_bat:
             
             
     elif pitcher_location == 2:
-        "The pitch is high and outside, not too hard to hit. You try to make contact..."
+
         $ needed_roll_strike =int(2 * ((0.5 * stat_pitcher_location) + pitcher_location))
-        $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
         show screen batter_needs_strike
-        "Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike]."
+
+        "The pitch is high and outside, not too hard to hit. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+
+        show screen button_eye
+        "Roll for Eye (1d12)!"
+
+        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        
+        hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
             $ is_hit = True
         else:
             $ strike_count +=1
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
 
     elif pitcher_location == 3:
         
-        "The pitch is low and outside, pulling away from you. You try to make contact..."
         $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
-        $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
         show screen batter_needs_strike
-        "Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike]."
+
+        "The pitch is low and outside, pulling away from you. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        
+        show screen button_eye
+        "Roll for Eye (1d12)!"
+
+        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+
+        hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You make contact!"
             $ is_hit = True
         else:
             show screen eye_roll
 
             $ strike_count +=1
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye], totaling [eye_roll_total]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
     elif pitcher_location == 4:
-        "The pitch is high and inside, approaching the edge of the zone. You try to make contact..."
+
         $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
-        $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
         show screen batter_needs_strike
-        "Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike]."
+
+        "The pitch is high and inside, approaching the edge of the zone. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+        
+        show screen button_eye
+        "Roll for Eye (1d12)!"
+
+        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+        
+        hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
 
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You make contact!"
             $ is_hit = True
         else:
             $ strike_count +=1
             show screen eye_roll
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
             
     elif pitcher_location == 5:
-        "The pitch is low and inside, dotted on the corner of the zone. You'll need a good eye to catch this one. You try to make contact..."
+
         $ needed_roll_strike = 2 * ((0.5 * stat_pitcher_location) + pitcher_location)
-        $ eye_roll_total = (stat_batter_eye * 0.5) + batter_eye
         show screen batter_needs_strike
-        "Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike]."
+
+        "The pitch is low and inside, dotted on the corner of the zone. You'll need a good eye to catch this one. Pitcher's Location stat is [stat_pitcher_location], hitter needs to roll a [needed_roll_strike] to make contact."
+
+        show screen button_eye
+        "Roll for Eye (1d12)!"
+
+        $ eye_roll_total = (stat_batter_eye * 0.5) + eye_roll
+
+        hide screen button_eye
 
         if eye_roll_total >= needed_roll_strike:
             show screen eye_roll
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye]. You make contact!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You make contact!"
             $ is_hit = True
         else:
             show screen eye_roll                
             $ strike_count +=1
-            "Your Eye roll (1d12) is [batter_eye] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
+            "Your Eye roll (1d12) is [eye_roll] + [0.5 * stat_batter_eye]. You swing and miss, Strike [strike_count]!"
             $ is_hit = False
             jump check_count
 
 
-
+    #logic to check for hits. if not hit, check count.
     if is_hit == False:
         jump check_count
         
@@ -139,10 +165,17 @@ label at_bat:
         hide screen batter_needs_strike
         hide screen batter_needs_ball
         hide screen location_roll
-        hide screen eye_roll           
+        hide screen eye_roll     
 
-        $ contact_one = renpy.random.randint(1,6)
-        $ contact_two = renpy.random.randint(1,6)
+
+        show screen button_hit_roll
+        "Roll to get your Contact (>2d6 + [stat_batter_contact]) and Power (1d20 + [stat_batter_power]) totals."     
+        hide screen button_hit_roll
+        
+        hide screen hit_score_screen 
+
+        #$ contact_one = renpy.random.randint(1,6)
+        #$ contact_two = renpy.random.randint(1,6)
 
         if contact_one >= contact_two:
             $ contact_total = stat_batter_contact + contact_one
@@ -152,11 +185,11 @@ label at_bat:
         show screen batter_roll_contact
         "Your Contact rolls (>2d6 + [stat_batter_contact]) were [contact_one] and [contact_two], meaning your Contact total is [contact_total]."
 
-        $ powerd20 = renpy.random.randint(1,20)
-        $ power_total = powerd20 + stat_batter_power
+        #$ powerd20 = renpy.random.randint(1,20)
+        $ power_total = power_roll + stat_batter_power
 
         show screen batter_roll_power
-        "Your Power roll (1d20 + [stat_batter_power]) was [powerd20], giving you a Power total of [power_total]."
+        "Your Power roll (1d20 + [stat_batter_power]) was [power_roll], giving you a Power total of [power_total]."
 
         python:
             hit_score = power_total * contact_total

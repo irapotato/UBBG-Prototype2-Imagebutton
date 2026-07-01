@@ -1,35 +1,37 @@
 ﻿init python:
     
-    stat_pitcher_location = 2
+    stat_pitcher_location = 3
     stat_pitcher_velo = 5
     stat_pitcher_accuracy = 3
 
     stat_batter_eye = 2
-    stat_batter_contact = 3
-    stat_batter_power = 5
+    stat_batter_contact = 2
+    stat_batter_power = 2
     
     import random
-    def eye_roll():
-        global eye_roll_total
-        eye_roll_total = random.randint(1,12) + (stat_batter_eye * 0.5)
 
-    def contact
-
-
+    def eye_roll_function():
+        global eye_roll
+        eye_roll = renpy.random.randint(1,12)
+    
+    def hit_roll_function():
+        global contact_one
+        global contact_two
+        global power_roll
+        contact_one = renpy.random.randint(1,6)
+        contact_two = renpy.random.randint(1,6)
+        power_roll = renpy.random.randint(1,20)
 
 define j = Character("Justin Davis")
 define w = Character("Wilmary Zuniga")
 define jm = Character("Jack (Dev)")
 define aa = Character("Alonso Aguilar")
 
-
-
-
 label start:
 
     "Welcome to the Untitled Baseball Game Prototype #2!"
 
-    "This is a test of Renpy where we will be running batting practice using multiple .rpy files to allow implimentation and make it easier to develop the game in steps."
+    "This is a test of implimenting the Renpy ImageButton screen to have the players roll their own dice. This is the primary planned input method for the first full prototype."
 
     python:
         
@@ -39,28 +41,28 @@ label start:
         #replacing the commented python code with imagebutton commands and python functions above
         # batter_eye = renpy.random.randint(1,12)
 
-        #contact_one = renpy.random.randint(1,6)
-        #contact_two = renpy.random.randint(1,6)
-        #powerd20 = renpy.random.randint(1,20)
-        #contact_roll = 0
+        contact_one = renpy.random.randint(1,6)
+        contact_two = renpy.random.randint(1,6)
+        power_roll = renpy.random.randint(1,20)
+        contact_roll = 0
         pitcher_velocity = renpy.random.randint(1,6)
         pitcher_accuracy = renpy.random.randint(1,20)
         strike_count = 0
         ball_count = 0
 
         #outcome text for outs
-        r_outfielder_positions = renpy.random.choice(["Left Fielder", "Right Fielder", "Center Fielder"])
-        r_ground_out_positions = renpy.random.choice(["Second Baseman", "Shortstop", "Third Baseman"])
+        r_outfielder_positions = renpy.random.choice(["left fielder", "right fielder", "center fielder"])
+        r_ground_out_positions = renpy.random.choice(["second baseman", "shortstop", "third baseman"])
 
         
 
     show screen player_stats
 
-    "Today, you will be playing as Justin Davis (+[stat_batter_eye] EYE, +[stat_batter_contact] CON, [stat_batter_power] POW), Rookie (DH) for the Boston Beans."
+    "Today, you will be playing as Justin Davis ([stat_batter_eye] EYE, [stat_batter_contact] CON, [stat_batter_power] POW), Rookie (DH) for the Boston Beans."
 
     show screen pitcher_stats
 
-    "You are practicing against Wilmary Zuniga (+[stat_pitcher_location] LOC, +[stat_pitcher_accuracy] ACC, +[stat_pitcher_velo] VELO), the veteran pitcher (CP) for Boston."
+    "You are practicing against Wilmary Zuniga ([stat_pitcher_location] LOC, [stat_pitcher_accuracy] ACC, [stat_pitcher_velo] VELO), the veteran pitcher (CP) for Boston. His blistering fastball and tight mechanics have helped him lock up the closer spot for Boston for the past few seasons."
 
     show screen scoreboard
 
@@ -70,7 +72,7 @@ label start:
 
     label best_end:
 
-        "Coach Aguilar draws your attention as you return to the dugout, high on your small victory against a skilled veteran."
+        "Coach Aguilar draws your attention as you return to the dugout, brining you back from your momentary high off your small victory against a skilled veteran."
 
         aa "Nice one, Davis!!! That ball was gone from the moment it left his hand. Good eye, good swing, good {i}everything{/i}!!!"
 
