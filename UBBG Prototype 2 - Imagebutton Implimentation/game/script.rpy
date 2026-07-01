@@ -1,5 +1,10 @@
 ﻿init python:
     
+    import random
+
+
+    # stat values for pitcher and batter
+
     stat_pitcher_location = 3
     stat_pitcher_velo = 5
     stat_pitcher_accuracy = 3
@@ -8,12 +13,12 @@
     stat_batter_contact = 2
     stat_batter_power = 2
     
-    import random
-
+    # function called by eye roll imagebutton screen. Only generates the random number, calculations are done locally.
     def eye_roll_function():
         global eye_roll
         eye_roll = renpy.random.randint(1,12)
     
+    # function called by hit roll imagebutton screen. Only generates the random numbers used to do calculations locally.
     def hit_roll_function():
         global contact_one
         global contact_two
@@ -22,6 +27,8 @@
         contact_two = renpy.random.randint(1,6)
         power_roll = renpy.random.randint(1,20)
 
+
+# speaking characters
 define j = Character("Justin Davis")
 define w = Character("Wilmary Zuniga")
 define jm = Character("Jack (Dev)")
@@ -29,22 +36,13 @@ define aa = Character("Alonso Aguilar")
 
 label start:
 
-    "Welcome to the Untitled Baseball Game Prototype #2!"
+    "Welcome to the Untitled Baseball Game Prototype!"
 
     "This is a test of implimenting the Renpy ImageButton screen to have the players roll their own dice. This is the primary planned input method for the first full prototype."
 
     python:
         
-
         pitcher_location = renpy.random.randint(1,6)
-
-        #replacing the commented python code with imagebutton commands and python functions above
-        # batter_eye = renpy.random.randint(1,12)
-
-        contact_one = renpy.random.randint(1,6)
-        contact_two = renpy.random.randint(1,6)
-        power_roll = renpy.random.randint(1,20)
-        contact_roll = 0
         pitcher_velocity = renpy.random.randint(1,6)
         pitcher_accuracy = renpy.random.randint(1,20)
         strike_count = 0
